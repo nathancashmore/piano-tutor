@@ -1,5 +1,6 @@
 @import "./styles/keyboard.css";
 @import "./styles/key.css";
+@import "./styles/stave.css";
 
 * {
   box-sizing:border-box
@@ -7,5 +8,5 @@
 
 body {
   margin:0;
-  background-color:#222;
+  background-color: white;
 }
