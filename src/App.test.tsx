@@ -2,8 +2,10 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders keyboard', () => {
+test('renders keyboard and stave', () => {
   render(<App />);
-  const linkElement = screen.getByTestId("keyboard");
-  expect(linkElement).toBeInTheDocument();
+  const keyboardElement = screen.getByTestId("keyboard");
+  const staveElement = screen.getByTestId("staff");
+  expect(keyboardElement).toBeInTheDocument();
+  expect(staveElement).toBeInTheDocument();
 });

@@ -8,7 +8,7 @@ interface Props {
 const Stave: React.FC<Props> = (props) => {
     return (
         <div className="staff-container">
-            <div className="staff">
+            <div className="staff" data-testid="staff">
                 <div className="bar double"/>
                 <div className="clef treble"/>
                 <div className={`quarter note ${props.note} ${props.status}`}/>
