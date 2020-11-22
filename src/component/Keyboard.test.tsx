@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Keyboard from "./Keyboard";
 
 test('should contain 12 keys', () => {
-    render(<Keyboard/>)
+    render(<Keyboard onNotePlayed={""}/>)
 
     const linkElement = screen.getByTestId("keyboard");
     expect(linkElement).toBeInTheDocument();

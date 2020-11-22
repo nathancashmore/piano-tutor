@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import Keyboard from "./component/Keyboard";
-import Stave from "./component/Stave";
+import Tutor from "./component/Tutor";
 
 function App() {
 
@@ -14,10 +13,10 @@ function App() {
     // * the note goes red
     // * an incorrect buzzer noise is played
 
+
     return (
         <>
-            <Stave/>
-            <Keyboard/>
+            <Tutor/>
         </>
     );
 }

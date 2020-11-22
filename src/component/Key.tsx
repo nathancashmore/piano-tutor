@@ -3,23 +3,28 @@ import React from 'react';
 interface Props {
     note: string;
     color: string;
+    onPlay: any;
 }
 
-const Key: React.FC<Props> = ({note, color}) => {
+class Key extends React.Component<Props> {
 
-    async function playSegment(note: string) {
+    async playSegment(note: string) {
+        await this.props.onPlay(note)
         const audio: HTMLAudioElement = (document.getElementById(note) as HTMLAudioElement);
         audio.currentTime = 0;
         await audio.play();
     }
 
-    return (
-        <div data-testid={`key-${note}-${color}`}
-            onClick={() => playSegment(note)}
-            className={`key ${color} ${note}`}>
-            <audio id={note} src={`sound/${note}.mp3`}/>
-        </div>
-    )
+    render() {
+        return(
+            <div data-testid={`key-${this.props.note}-${this.props.color}`}
+                 onClick={() => this.playSegment(this.props.note)}
+                 className={`key ${this.props.color} ${this.props.note}`}>
+                <audio id={this.props.note} src={`sound/${this.props.note}.mp3`}/>
+            </div>
+        )
+    }
+
 }
 
 export default Key;

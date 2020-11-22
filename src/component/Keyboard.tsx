@@ -1,25 +1,41 @@
 import React from 'react';
 import Key from "./Key";
 
-const Keyboard: React.FC = () => {
-    return (
-        <div className="keyboard-container">
-            <div data-testid={"keyboard"} className="keyboard">
-                <Key note={'c'} color={'white'}/>
-                <Key note={'cs'} color={'black'}/>
-                <Key note={'d'} color={'white'}/>
-                <Key note={'ds'} color={'black'}/>
-                <Key note={'e'} color={'white'}/>
-                <Key note={'f'} color={'white'}/>
-                <Key note={'fs'} color={'black'}/>
-                <Key note={'g'} color={'white'}/>
-                <Key note={'gs'} color={'black'}/>
-                <Key note={'a'} color={'white'}/>
-                <Key note={'as'} color={'black'}/>
-                <Key note={'b'} color={'white'}/>
+interface State {}
+interface Props {
+    onNotePlayed: any
+}
+
+class Keyboard extends React.Component<Props, State> {
+    constructor(props: Props) {
+        super(props);
+        this.handleNotePlayed = this.handleNotePlayed.bind(this)
+    }
+
+    handleNotePlayed(note: string) {
+        this.props.onNotePlayed(note)
+    }
+
+    render() {
+        return(
+            <div className="keyboard-container">
+                <div data-testid={"keyboard"} className="keyboard">
+                    <Key onPlay={this.handleNotePlayed} note={'c'} color={'white'}/>
+                    <Key onPlay={this.handleNotePlayed} note={'cs'} color={'black'}/>
+                    <Key onPlay={this.handleNotePlayed} note={'d'} color={'white'}/>
+                    <Key onPlay={this.handleNotePlayed} note={'ds'} color={'black'}/>
+                    <Key onPlay={this.handleNotePlayed} note={'e'} color={'white'}/>
+                    <Key onPlay={this.handleNotePlayed} note={'f'} color={'white'}/>
+                    <Key onPlay={this.handleNotePlayed} note={'fs'} color={'black'}/>
+                    <Key onPlay={this.handleNotePlayed} note={'g'} color={'white'}/>
+                    <Key onPlay={this.handleNotePlayed} note={'gs'} color={'black'}/>
+                    <Key onPlay={this.handleNotePlayed} note={'a'} color={'white'}/>
+                    <Key onPlay={this.handleNotePlayed} note={'as'} color={'black'}/>
+                    <Key onPlay={this.handleNotePlayed} note={'b'} color={'white'}/>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default Keyboard;

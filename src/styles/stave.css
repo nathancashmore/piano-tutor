@@ -90,6 +90,21 @@
     top: -24px;
     right: 0;
 }
+
+.half.note.good::before,
+.half.note.good::after,
+.quarter.note.good::before,
+.quarter.note.good::after {
+    background-color: green;
+}
+
+.half.note.bad::before,
+.half.note.bad::after,
+.quarter.note.bad::before,
+.quarter.note.bad::after {
+    background-color: red;
+}
+
 .half.note::before,
 .quarter.note::before {
     position: absolute;
@@ -106,6 +121,7 @@
 .quarter.note::before {
     background-color: black;
 }
+
 .note.d4 {
     top: 32px;
 }
