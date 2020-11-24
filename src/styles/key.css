@@ -57,6 +57,26 @@
     border-radius:0 5px 5px 5px
 }
 
-.key.d,.key.e,.key.g,.key.a,.key.b{
+.key.d3,
+.key.d4,
+.key.d5,
+.key.d6,
+.key.e3,
+.key.e4,
+.key.e5,
+.key.e6,
+.key.g3,
+.key.g4,
+.key.g5,
+.key.g6,
+.key.a3,
+.key.a4,
+.key.a5,
+.key.a6,
+.key.b3,
+.key.b4,
+.key.b5,
+.key.b6
+{
     margin:0 0 0 -1em
 }

@@ -19,13 +19,17 @@ class Tutor extends React.Component<Props, State> {
     handleNotePlayed(note: string) {
         console.log(`Tutor heard the note : ${note}` )
 
-        if (this.state.expectedNote.includes(note)) {
+        if (this.state.expectedNote === note) {
             this.setState({expectedNote: 'a5'})
             this.setState({notePlayed: undefined})
             console.log(`Tutor changed the expected note to : 'a5'` )
         } else {
             this.setState({notePlayed: note})
         }
+    }
+
+    resetState() {
+        console.log('RESET PLEASE')
     }
 
     getNoteStatus(){
@@ -44,8 +48,9 @@ class Tutor extends React.Component<Props, State> {
     render() {
         return (
             <>
-            <Stave note={this.state.expectedNote} status={this.getNoteStatus()}/>
-            <Keyboard onNotePlayed={this.handleNotePlayed}/>
+            <Stave note={this.state.expectedNote} status={this.getNoteStatus()} />
+            <Keyboard onNotePlayed={this.handleNotePlayed} />
+            <button onClick={this.resetState}> RESET </button>
             </>
         )
     }
