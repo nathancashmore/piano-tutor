@@ -24,11 +24,7 @@ export const keys = [
     { note : 'e5', color : 'white' },
     { note : 'f5', color : 'white' },
     { note : 'fs5', color : 'black' },
-    { note : 'g5', color : 'white' },
-    { note : 'gs5', color : 'black' },
-    { note : 'a6', color : 'white' },
-    { note : 'as6', color : 'black' },
-    { note : 'b6', color : 'white' },
+    { note : 'g5', color : 'white' }
 ]
 
 class Keyboard extends React.Component<Props, State> {
