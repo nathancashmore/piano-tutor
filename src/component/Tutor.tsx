@@ -1,56 +1,64 @@
 import React from "react";
 import Stave from "./Stave";
-import Keyboard from "./Keyboard";
+import Keyboard, {keys} from "./Keyboard";
 
 interface Props {}
 
 interface State {
     expectedNote: string
     notePlayed: string | undefined
+    assessment: string
 }
 
 class Tutor extends React.Component<Props, State> {
+    timerID!: NodeJS.Timeout;
+
     constructor(props: Props) {
         super(props);
         this.handleNotePlayed = this.handleNotePlayed.bind(this)
-        this.state = {expectedNote : 'c5', notePlayed : undefined};
+
+        const initialNote = this.getRandomKey().note
+        console.log(`Initial note set to ${initialNote}`)
+        this.state = {expectedNote : initialNote, notePlayed : undefined, assessment: "ready"};
+    }
+
+    componentDidMount() {
+        this.timerID = setInterval(
+            () => {
+                console.log("Checking if note needs replacing...")
+                if (this.state.expectedNote === this.state.notePlayed) {
+                    this.setState({expectedNote : this.getRandomKey().note, notePlayed : undefined, assessment: "ready"});
+                }
+            },
+            1000
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
     }
 
     handleNotePlayed(note: string) {
-        console.log(`Tutor heard the note : ${note}` )
+        console.log(`Tutor heard the note : ${note} : Looking for ${this.state.expectedNote}` )
+
+        this.setState({notePlayed: note})
 
         if (this.state.expectedNote === note) {
-            this.setState({expectedNote: 'a5'})
-            this.setState({notePlayed: undefined})
-            console.log(`Tutor changed the expected note to : 'a5'` )
+            this.setState({assessment: "good"})
         } else {
-            this.setState({notePlayed: note})
+            this.setState({assessment: "bad"})
         }
     }
 
-    resetState() {
-        console.log('RESET PLEASE')
-    }
-
-    getNoteStatus(){
-        if(this.state.notePlayed === undefined) {
-            return ''
-        }
-
-        if (this.state.expectedNote.includes(this.state.notePlayed)) {
-            return 'good'
-        } else {
-            return 'bad'
-        }
-
+    getRandomKey() {
+        return keys[keys.length * Math.random() | 1]
     }
 
     render() {
         return (
             <>
-            <Stave note={this.state.expectedNote} status={this.getNoteStatus()} />
+            <Stave note={this.state.expectedNote} status={this.state.assessment} />
             <Keyboard onNotePlayed={this.handleNotePlayed} />
-            <button onClick={this.resetState}> RESET </button>
             </>
         )
     }
