@@ -122,6 +122,41 @@
     background-color: black;
 }
 
+.note.ds4::after,
+.note.fs4::after,
+.note.gs4::after,
+.note.as5::after,
+.note.cs5::after,
+.note.ds5::after,
+.note.fs5::after
+{
+    content: "\266F";
+    font-size: initial;
+}
+
+.note.ds4.good::after,
+.note.fs4.good::after,
+.note.gs4.good::after,
+.note.as5.good::after,
+.note.cs5.good::after,
+.note.ds5.good::after,
+.note.fs5.good::after
+{
+    color: green;
+}
+
+.note.ds4.bad::after,
+.note.fs4.bad::after,
+.note.gs4.bad::after,
+.note.as5.bad::after,
+.note.cs5.bad::after,
+.note.ds5.bad::after,
+.note.fs5.bad::after
+{
+    color: red;
+}
+
+
 .note.d4, .note.ds4 {
     top: 32px;
 }
