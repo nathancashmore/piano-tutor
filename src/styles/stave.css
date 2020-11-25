@@ -122,46 +122,53 @@
     background-color: black;
 }
 
-.note.d4 {
+.note.d4, .note.ds4 {
     top: 32px;
 }
 .note.e4 {
     top: 28px;
 }
-.note.f4 {
+.note.f4, .note.fs4 {
     top: 24px;
 }
-.note.g4 {
+.note.g4, .note.gs4 {
     top: 20px;
 }
-.note.a5 {
+.note.a5, .note.as5 {
     top: 16px;
 }
 .note.b5 {
     top: 12px;
 }
-.note.c5 {
+.note.c5, .note.cs5 {
     top: 8px;
 }
-.note.d5 {
+.note.d5, .note.ds5 {
     top: 4px;
 }
 .note.e5 {
     top: 0px;
 }
-.note.f5 {
+.note.f5, .note.fs5 {
     top: -4px;
 }
-.note.g5 {
+.note.g5, .note.gs5 {
     top: -8px;
 }
+
 .quarter.note.d5::after,
+.quarter.note.ds5::after,
 .half.note.d5::after,
+.half.note.ds5::after,
 .quarter.note.e5::after,
 .half.note.e5::after,
 .quarter.note.f5::after,
+.quarter.note.fs5::after,
 .half.note.f5::after,
+.half.note.fs5::after,
 .quarter.note.g5::after,
-.half.note.g5::after {
+.quarter.note.gs5::after,
+.half.note.g5::after,
+.half.note.gs5::after {
     top: 4px;
 }
