@@ -1,6 +1,7 @@
 import React from "react";
 import Stave from "./Stave";
 import Keyboard, {keys} from "./Keyboard";
+import Hint from "./Hint";
 
 interface Props {}
 
@@ -58,6 +59,7 @@ class Tutor extends React.Component<Props, State> {
         return (
             <>
             <Stave note={this.state.expectedNote} status={this.state.assessment} />
+            <Hint expectedNote={this.state.expectedNote} notePlayed={this.state.notePlayed} assessment={this.state.assessment} />
             <Keyboard onNotePlayed={this.handleNotePlayed} />
             </>
         )

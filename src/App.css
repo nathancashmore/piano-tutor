@@ -1,6 +1,7 @@
 @import "./styles/keyboard.css";
 @import "./styles/key.css";
 @import "./styles/stave.css";
+@import "./styles/tutor.css";
 
 * {
   box-sizing:border-box
