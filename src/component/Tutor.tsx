@@ -58,7 +58,7 @@ class Tutor extends React.Component<Props, State> {
     render() {
         return (
             <>
-            <Stave note={this.state.expectedNote} status={this.state.assessment} />
+            <Stave note={this.state.expectedNote} status={this.state.assessment} wrongNote={undefined}/>
             <Hint expectedNote={this.state.expectedNote} notePlayed={this.state.notePlayed} assessment={this.state.assessment} />
             <Keyboard onNotePlayed={this.handleNotePlayed} />
             </>
