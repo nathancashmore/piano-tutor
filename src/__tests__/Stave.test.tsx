@@ -4,30 +4,38 @@ import Stave from "../component/Stave";
 
 describe("Stave", () => {
     test('should render stave with appropriate note', () => {
-        render(<Stave note={'c5'} status={'ready'} wrongNote={undefined}/>)
+        render(<Stave expectedNote={'c5'} playedNote={undefined}/>)
 
         const mainElement = screen.getByTestId("staff");
-        const note = mainElement.getElementsByClassName("c5 ready")[0];
         expect(mainElement).toBeInTheDocument();
-        expect(note).toBeInTheDocument();
+
+        const expectedNote = mainElement.getElementsByClassName("c5 ready")[0];
+        expect(expectedNote).toBeInTheDocument();
     });
 
     test('should render wrong note if provided', () => {
-        render(<Stave note={'c5'} status={'ready'} wrongNote={'c6'}/>)
+        render(<Stave expectedNote={'c5'} playedNote={'c6'}/>)
 
         const mainElement = screen.getByTestId("staff");
-        const note = mainElement.getElementsByClassName("c6 bad")[0];
         expect(mainElement).toBeInTheDocument();
-        expect(note).toBeInTheDocument();
+
+        const expectedNote = mainElement.getElementsByClassName("c5 ready")[0]
+        const wrongNote = mainElement.getElementsByClassName("c6 bad")[0];
+
+        expect(wrongNote).toBeInTheDocument();
+        expect(expectedNote).toBeInTheDocument();
     })
 
-    test('should render green expected note if status is good', () => {
-        render(<Stave note={'c5'} status={'good'} wrongNote={undefined}/>)
+    test('should render green expected note if its been played', () => {
+        render(<Stave expectedNote={'c5'} playedNote={'c5'}/>)
 
         const mainElement = screen.getByTestId("staff");
-        const note = mainElement.getElementsByClassName("c5 good")[0];
         expect(mainElement).toBeInTheDocument();
-        expect(note).toBeInTheDocument();
+
+        const expectedNote = mainElement.getElementsByClassName("c5 good")[0];
+        const wrongNote = mainElement.getElementsByClassName("c5 bad");
+        expect(expectedNote).toBeInTheDocument();
+        expect(wrongNote.length).toBe(0);
     })
 
 });

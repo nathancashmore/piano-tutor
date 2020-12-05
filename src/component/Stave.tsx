@@ -1,15 +1,20 @@
 import React from 'react';
 
 interface Props {
-    note: string
-    status: string
-    wrongNote : string | undefined
+    expectedNote: string
+    playedNote : string | undefined
 }
 
 const Stave: React.FC<Props> = (props) => {
     let conditionalWrongNote;
-    if (props.wrongNote !== undefined) {
-        conditionalWrongNote = <div data-testid="wrong-note" className={`quarter note ${props.wrongNote} bad`}/>
+    let expectedNoteStatus = "ready";
+
+    if (props.playedNote !== undefined && props.playedNote !== props.expectedNote ) {
+        conditionalWrongNote = <div data-testid="wrong-note" className={`quarter note ${props.playedNote} bad`}/>
+    }
+
+    if (props.playedNote === props.expectedNote) {
+        expectedNoteStatus = "good";
     }
 
     return (
@@ -17,7 +22,7 @@ const Stave: React.FC<Props> = (props) => {
             <div className="staff" data-testid="staff">
                 <div className="bar double"/>
                 <div className="clef treble"/>
-                <div className={`quarter note ${props.note} ${props.status}`}/>
+                <div className={`quarter note ${props.expectedNote} ${expectedNoteStatus}`}/>
                 {conditionalWrongNote}
                 <div className="bar end"/>
             </div>
