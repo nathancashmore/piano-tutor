@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react';
-import Hint from './Hint';
+import Hint from '../component/Hint';
 
 describe("Hint", () => {
     test('renders hint before assessment', () => {

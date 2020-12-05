@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Key from './Key';
+import Key from '../component/Key';
 
 describe("Key", () => {
     test('renders a white middle c', () => {
