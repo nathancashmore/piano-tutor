@@ -22,7 +22,7 @@ const Stave: React.FC<Props> = (props) => {
             <div className="staff" data-testid="staff">
                 <div className="bar double"/>
                 <div className="clef treble"/>
-                <div data-testid='expected-note' className={`quarter note ${props.expectedNote} ${expectedNoteStatus}`}>{props.expectedNote}</div>
+                <div data-testid='expected-note' className={`quarter note ${props.expectedNote} ${expectedNoteStatus}`}/>
                 {conditionalWrongNote}
                 <div className="bar end"/>
             </div>
