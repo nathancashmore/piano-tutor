@@ -1,4 +1,4 @@
-# Piano Tutor
+# Piano Tutor - <BUILD STATUS>
 Simple React App to help you learn to play the piano.
 
 ## Available Scripts
