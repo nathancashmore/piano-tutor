@@ -59,7 +59,7 @@
 
 .note {
     position: relative;
-    display: inline-block;
+    display: inline;
     width: 12px;
     height: 32px;
     margin: 0 12px 48px;
@@ -87,7 +87,7 @@
     width: 1px;
     background-color: black;
     position: absolute;
-    top: -24px;
+    top: -76px;
     right: 0;
 }
 
@@ -125,7 +125,7 @@
 .note.ds4::after,
 .note.fs4::after,
 .note.gs4::after,
-.note.as5::after,
+.note.as4::after,
 .note.cs5::after,
 .note.ds5::after,
 .note.fs5::after
@@ -137,7 +137,7 @@
 .note.ds4.good::after,
 .note.fs4.good::after,
 .note.gs4.good::after,
-.note.as5.good::after,
+.note.as4.good::after,
 .note.cs5.good::after,
 .note.ds5.good::after,
 .note.fs5.good::after
@@ -148,7 +148,7 @@
 .note.ds4.bad::after,
 .note.fs4.bad::after,
 .note.gs4.bad::after,
-.note.as5.bad::after,
+.note.as4.bad::after,
 .note.cs5.bad::after,
 .note.ds5.bad::after,
 .note.fs5.bad::after
@@ -169,10 +169,10 @@
 .note.g4, .note.gs4 {
     top: 20px;
 }
-.note.a5, .note.as5 {
+.note.a4, .note.as4 {
     top: 16px;
 }
-.note.b5 {
+.note.b4 {
     top: 12px;
 }
 .note.c5, .note.cs5 {
@@ -182,7 +182,7 @@
     top: 4px;
 }
 .note.e5 {
-    top: 0px;
+    top: 0;
 }
 .note.f5, .note.fs5 {
     top: -4px;
@@ -191,19 +191,3 @@
     top: -8px;
 }
 
-.quarter.note.d5::after,
-.quarter.note.ds5::after,
-.half.note.d5::after,
-.half.note.ds5::after,
-.quarter.note.e5::after,
-.half.note.e5::after,
-.quarter.note.f5::after,
-.quarter.note.fs5::after,
-.half.note.f5::after,
-.half.note.fs5::after,
-.quarter.note.g5::after,
-.quarter.note.gs5::after,
-.half.note.g5::after,
-.half.note.gs5::after {
-    top: 4px;
-}
