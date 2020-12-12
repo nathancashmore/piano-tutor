@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Piano Tutor",
+  "name": "Piano Tutor simple app to help you learn the piano",
   "icons": [
     {
       "src": "favicon.ico",

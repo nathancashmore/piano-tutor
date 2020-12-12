@@ -1,4 +1,4 @@
-# Piano Tutor   ![Build Status](https://app.codeship.com/projects/cf969a41-2b49-4e42-b10a-3b31cf403329/status?branch=master)
+# ![](http://piano-tutor.herokuapp.com/favicon.ico) Piano Tutor   ![Build Status](https://app.codeship.com/projects/cf969a41-2b49-4e42-b10a-3b31cf403329/status?branch=master)
 Simple React App to help you learn to play the piano.
 
 ## Available Scripts
