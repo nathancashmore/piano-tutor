@@ -1,6 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import {act, render, screen} from '@testing-library/react';
 import Tutor from "../component/Tutor";
+
+jest.useFakeTimers();
 
 describe("Tutor", () => {
     test('should contain a stave and a keyboard', () => {
@@ -13,15 +15,19 @@ describe("Tutor", () => {
         expect(keyboardElement).toBeInTheDocument();
     });
 
-    test('should reset state when correct note played', () => {
-        render(<Tutor/>, )
+    test('should handle change when note played', () => {
+        render(<Tutor/>)
 
-        // Set initial state to have specific expectedNote
+        const expectedNote = screen.getByTestId("expected-note");
+        const keyToPlay = screen.getByTestId(`key-${expectedNote.textContent}`)
 
-        // click the appropriate note
+        expect(expectedNote.classList).toContain("ready");
 
-        // Check to see the expected note has changed
+        act(() => {
+            keyToPlay.click()
+        });
 
+        expect(expectedNote.classList).toContain("good");
     })
 })
 

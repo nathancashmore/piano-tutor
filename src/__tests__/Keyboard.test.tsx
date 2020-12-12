@@ -19,7 +19,7 @@ describe("Keyboard", () => {
         const mockFunction = jest.fn(() => {});
         const result = render(<Keyboard onNotePlayed={mockFunction}/>);
 
-        const key = result.getByTestId("key-c5-white");
+        const key = result.getByTestId("key-c5");
         await key.click()
 
         expect(mockFunction.mock.calls.length).toBe(1);

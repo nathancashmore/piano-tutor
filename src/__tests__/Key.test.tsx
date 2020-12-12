@@ -7,7 +7,7 @@ describe("Key", () => {
         render(<Key note="c5" color="white" onPlay={() => {
         }}/>)
 
-        const linkElement = screen.getByTestId("key-c5-white");
+        const linkElement = screen.getByTestId("key-c5");
         expect(linkElement).toBeInTheDocument();
         expect(linkElement).toHaveClass('white')
         expect(linkElement.firstChild).toBeInstanceOf(HTMLAudioElement)
@@ -18,7 +18,7 @@ describe("Key", () => {
         render(<Key note={'fs4'} color={'black'} onPlay={() => {
         }}/>)
 
-        const linkElement = screen.getByTestId("key-fs4-black");
+        const linkElement = screen.getByTestId("key-fs4");
         expect(linkElement).toBeInTheDocument();
         expect(linkElement).toHaveClass('black')
         expect(linkElement.firstChild).toBeInstanceOf(HTMLAudioElement)
@@ -35,7 +35,7 @@ describe("Key", () => {
             })
 
         render(<Key note={'fs4'} color={'black'} onPlay={mockOnPlay}/>)
-        const linkElement = screen.getByTestId("key-fs4-black");
+        const linkElement = screen.getByTestId("key-fs4");
         await linkElement.click()
 
         expect(mockOnPlay.mock.calls.length).toBe(1);

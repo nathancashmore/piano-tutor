@@ -17,7 +17,7 @@ class Key extends React.Component<Props> {
 
     render() {
         return(
-            <div data-testid={`key-${this.props.note}-${this.props.color}`}
+            <div data-testid={`key-${this.props.note}`}
                  onClick={() => this.playSegment(this.props.note)}
                  className={`key ${this.props.color} ${this.props.note}`}>
                 <audio id={this.props.note} src={`sound/${this.props.note}.mp3`}/>

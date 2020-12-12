@@ -8,7 +8,6 @@ interface Props {}
 interface State {
     expectedNote: string
     notePlayed: string | undefined
-    assessment: string
 }
 
 class Tutor extends React.Component<Props, State> {
@@ -20,7 +19,7 @@ class Tutor extends React.Component<Props, State> {
 
         const initialNote = this.getRandomKey().note
         console.log(`Initial note set to ${initialNote}`)
-        this.state = {expectedNote : initialNote, notePlayed : undefined, assessment: "ready"};
+        this.state = {expectedNote : initialNote, notePlayed : undefined};
     }
 
     componentDidMount() {
@@ -28,7 +27,7 @@ class Tutor extends React.Component<Props, State> {
             () => {
                 console.log("Checking if note needs replacing...")
                 if (this.state.expectedNote === this.state.notePlayed) {
-                    this.setState({expectedNote : this.getRandomKey().note, notePlayed : undefined, assessment: "ready"});
+                    this.setState({expectedNote : this.getRandomKey().note, notePlayed : undefined});
                 }
             },
             1000
@@ -41,14 +40,7 @@ class Tutor extends React.Component<Props, State> {
 
     handleNotePlayed(note: string) {
         console.log(`Tutor heard the note : ${note} : Looking for ${this.state.expectedNote}` )
-
         this.setState({notePlayed: note})
-
-        if (this.state.expectedNote === note) {
-            this.setState({assessment: "good"})
-        } else {
-            this.setState({assessment: "bad"})
-        }
     }
 
     getRandomKey() {
@@ -58,8 +50,8 @@ class Tutor extends React.Component<Props, State> {
     render() {
         return (
             <>
-            <Stave note={this.state.expectedNote} status={this.state.assessment} wrongNote={undefined}/>
-            <Hint expectedNote={this.state.expectedNote} notePlayed={this.state.notePlayed} assessment={this.state.assessment} />
+            <Stave expectedNote={this.state.expectedNote} playedNote={this.state.notePlayed} />
+            <Hint expectedNote={this.state.expectedNote} notePlayed={this.state.notePlayed} />
             <Keyboard onNotePlayed={this.handleNotePlayed} />
             </>
         )
