@@ -44,18 +44,36 @@ class Hint extends React.Component<Props, State> {
                 {this.state.toggle &&
                 <>
                   <span>Looking for the note </span>
-                  <span data-testid="hint-expected-note" className={`hint-note ${this.rightNotePlayed() ? 'hint-note-good' : ""}`}>{this.props.expectedNote}</span>
+                  <span data-testid="hint-expected-note"
+                        aria-label={this.props.expectedNote}
+                        className={`hint-note ${this.rightNotePlayed() ? 'hint-note-good' : ""}`}>
+                      {Hint.getDisplayFor(this.props.expectedNote)}
+                  </span>
                     {this.wrongNotePlayed() &&
                     <div data-testid="hint-bad-note-message" className={"hint-bad-note-message"}>
                       <span>.... but you played </span>
                       <span data-testid="hint-note-played"
-                            className={"hint-note hint-note-bad"}>{this.props.notePlayed}</span>
+                            aria-label={this.props.notePlayed}
+                            className={"hint-note hint-note-bad"}>
+                          {Hint.getDisplayFor(this.props.notePlayed)}
+                      </span>
                     </div>
                     }
                 </>
                 }
             </div>
         )
+    }
+
+    private static getDisplayFor(expectedNote: string | undefined): string {
+        if (expectedNote === undefined ) {
+            return '';
+        } else {
+            return expectedNote
+                .replace('s', '#')
+                .toUpperCase()
+                .replace(/[0-9]/g, '');
+        }
     }
 }
 
