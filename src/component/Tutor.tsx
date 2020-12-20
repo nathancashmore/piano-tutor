@@ -9,6 +9,8 @@ interface State {
     notePlayed: string | undefined
 }
 
+const CHECK_STATE_INTERVAL = 3000;
+
 class Tutor extends React.Component<Props, State> {
     timerID!: NodeJS.Timeout;
 
@@ -30,7 +32,7 @@ class Tutor extends React.Component<Props, State> {
     }
 
     componentDidMount() {
-        this.timerID = setInterval(() => this.checkState(), 4000);
+        this.timerID = setInterval(() => this.checkState(), CHECK_STATE_INTERVAL);
     }
 
     componentWillUnmount() {
