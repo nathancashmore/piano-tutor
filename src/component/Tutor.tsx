@@ -30,7 +30,7 @@ class Tutor extends React.Component<Props, State> {
     }
 
     componentDidMount() {
-        this.timerID = setInterval(() => this.checkState(), 1000);
+        this.timerID = setInterval(() => this.checkState(), 4000);
     }
 
     componentWillUnmount() {

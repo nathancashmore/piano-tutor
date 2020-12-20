@@ -2,6 +2,7 @@
 @import "./styles/key.css";
 @import "./styles/stave.css";
 @import "./styles/tutor.css";
+@import "./styles/hint.css";
 
 * {
   box-sizing:border-box
