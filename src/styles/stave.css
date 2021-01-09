@@ -1,8 +1,8 @@
 
 .staff {
     font-size: 0;
-    background-image: linear-gradient(180deg, #999 0, #999 1px, transparent 1px, transparent 8px, #999 8px, #999 9px, transparent 9px, transparent 16px, #999 16px, #999 17px, transparent 17px, transparent 24px, #999 24px, #999 25px, transparent 25px, transparent 32px, #999 32px, #999 33px, transparent 33px);
-    background-size: 100% 80px;
+    background-image: linear-gradient(180deg, #999 0, #999 2px, transparent 2px, transparent 16px, #999 16px, #999 18px, transparent 18px, transparent 32px, #999 32px, #999 34px, transparent 34px, transparent 48px, #999 48px, #999 50px, transparent 50px, transparent 64px, #999 64px, #999 66px, transparent 66px);
+    background-size: 100% 160px;
 }
 
 .staff-container {
@@ -15,9 +15,9 @@
 .bar {
     position: relative;
     display: inline-block;
-    height: 32px;
-    margin: 0 12px 48px;
-    width: 2px;
+    height: 64px;
+    margin: 0 24px 96px;
+    width: 4px;
     border-right: 1px solid black;
 }
 
@@ -27,18 +27,13 @@
 }
 .bar.end {
     float: right;
-    border-right-width: 4px;
+    border-right-width: 8px;
     margin-right: 0;
 }
 
-
 .clef {
-    position: relative;
     display: inline-block;
-    margin: 0 50px 48px -10px;
-    padding-right: 1rem;
-    width: 12px;
-    height: 32px;
+    margin: 0 50px 144px 0px;
 }
 
 .clef::before {
@@ -46,8 +41,8 @@
 }
 
 .treble::before {
-    margin-top: -35px;
-    font-size: 77px;
+    margin-top: -45px;
+    font-size: 100px;
     content: "\1D11E";
 }
 
@@ -60,34 +55,34 @@
 .note {
     position: relative;
     display: inline;
-    width: 12px;
-    height: 32px;
-    margin: 0 40px 48px;
+    width: 24px;
+    height: 64px;
+    margin: 0 50px 96px;
 }
 .debug .note {
     outline: 1px solid rgba(255, 0, 0, 0.1);
 }
 .note::before {
-    height: 8px;
-    width: 12px;
+    height: 16px;
+    width: 24px;
 }
 .whole.note::before {
     position: absolute;
     content: "";
     box-sizing: border-box;
     border: 1px solid black;
-    border-left-width: 4px;
-    border-right-width: 4px;
+    border-left-width: 8px;
+    border-right-width: 8px;
     border-radius: 50%;
 }
 .half.note::after,
 .quarter.note::after {
     content: "";
-    height: 28px;
+    height: 56px;
     width: 1px;
     background-color: black;
     position: absolute;
-    top: -76px;
+    top: -152px;
     right: 0;
 }
 
@@ -115,8 +110,8 @@
 .half.note::before {
     box-sizing: border-box;
     border: 1px solid black;
-    border-top-width: 2.18181818px;
-    border-bottom-width: 2.18181818px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
 }
 .quarter.note::before {
     background-color: black;
@@ -131,7 +126,7 @@
 .note.fs5::after
 {
     content: "    \266F";
-    font-size: initial;
+    font-size: 26px;
     white-space: pre;
 }
 
@@ -159,36 +154,36 @@
 
 
 .note.d4, .note.ds4 {
-    top: 32px;
+    top: 64px;
 }
 .note.e4 {
-    top: 28px;
+    top: 56px;
 }
 .note.f4, .note.fs4 {
-    top: 24px;
+    top: 48px;
 }
 .note.g4, .note.gs4 {
-    top: 20px;
+    top: 40px;
 }
 .note.a4, .note.as4 {
-    top: 16px;
+    top: 32px;
 }
 .note.b4 {
-    top: 12px;
+    top: 24px;
 }
 .note.c5, .note.cs5 {
-    top: 8px;
+    top: 16px;
 }
 .note.d5, .note.ds5 {
-    top: 4px;
+    top: 8px;
 }
 .note.e5 {
     top: 0;
 }
 .note.f5, .note.fs5 {
-    top: -4px;
+    top: -8px;
 }
 .note.g5, .note.gs5 {
-    top: -8px;
+    top: -16px;
 }
 
