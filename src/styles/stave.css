@@ -83,7 +83,7 @@
     background-color: black;
     position: absolute;
     top: -152px;
-    right: 0;
+    right: -1px;
 }
 
 .half.note.good::before,
